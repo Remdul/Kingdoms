@@ -1,0 +1,6 @@
+# IMPORTANT:
+# Be very careful when editing this LandContol.yml file. Incorrectly adjusting certain values
+# can result in the plugin breaking, and you having to reset all of your kingdoms / chunks.
+# Modify this file at your own risk.
+
+Chunks: {}

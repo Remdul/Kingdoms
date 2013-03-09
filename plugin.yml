@@ -1,0 +1,28 @@
+name: Kingdoms
+main: kingdomsteam.kingdomsmain.Main
+version: 1.5.1.0
+description: A kingdoms plugin - a towny/factions replacement.
+softdepend: [TagAPI, Vault, Essentials]
+author: Latros, Yahtze
+commands:
+    kingdom:
+        aliases: [k, ki]
+        description: The Kingdoms base command.
+    kchat:
+        description: The Kingdoms chat command.
+    khome:
+        aliases: [kh, ktele, ktp]
+        description: The Kingdoms home command.
+    ksethome:
+        aliases: [ksh, kseth]
+        description: The Kingdoms set home command.
+    kcompass:
+        aliases: [kcomp]
+        description: The Kingdoms compass command.
+    kversion:
+        aliases: [kv]
+        description: The Kingdoms version command.
+    kclaim:
+        description: The Kingdoms claim command.
+    kunclaim:
+        description: The Kingdoms unclaim command.
