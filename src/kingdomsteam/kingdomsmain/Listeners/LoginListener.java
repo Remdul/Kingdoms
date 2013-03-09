@@ -47,6 +47,12 @@ public class LoginListener implements Listener{
 			Util.srm(e.getPlayer(), ChatColor.DARK_GRAY + "_________ ~..,,|| " + ChatColor.DARK_AQUA +  "Kingdom Message of the Day:"+ChatColor.DARK_GRAY + " ||,,..~ _________");
 			Util.srm(e.getPlayer(), "  "+motd);
 		}
+/*		if(GeneralHelper.isFeatureEnabledWar((CommandSender) e.getPlayer()) == true){
+			if(playersKingdom != null && !playersKingdom.matches("None")){
+				long lastKingdomInteractionPlus30Min = (System.currentTimeMillis() + (Main.politicsAndWarConfig.getInt("War.Raidability_Grace_Period_(Minutes)") * 60000));
+				Main.lastKingdomInteractions.put(playersKingdom.toLowerCase(), lastKingdomInteractionPlus30Min);
+			}
+		}*/
 		
 		Main.savePlayersYaml();
 		return true;

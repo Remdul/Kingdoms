@@ -23,8 +23,6 @@ public class PlayerMoveListener implements Listener{
 	@EventHandler(priority=EventPriority.MONITOR)
 	public void onPlayerMove (PlayerMoveEvent e){
 		
-		// this is a comment
-		
 		Player p = e.getPlayer();
 		String w = p.getLocation().getWorld().getName().toLowerCase();
 		int c = p.getLocation().getChunk().getX();
@@ -42,8 +40,9 @@ public class PlayerMoveListener implements Listener{
 						Util.sm(p,"You have entered your Kingdom. You feel safe.");
 					}
 					if(!playersKingdom.matches(ownedKingdomName)){
-						Util.sm(p,"You have entered territory owned by the kingdom ["+Util.getRealKingdomName(ownedKingdomName)+ChatColor.GRAY+"]. Beware.");
-						Util.gbc(ownedKingdomName, ChatColor.DARK_RED + "!!!!!!!!!!!!! " + ChatColor.RED + p.getName() + " has entered our guilds territory! Possible raid incoming, defend" + ChatColor.DARK_RED + " !!!!!!!!!!!!! ");
+						Util.srm(p,ChatColor.DARK_GRAY + "         ------------! Warning !------------");
+						Util.srm(p,ChatColor.RED + "        You have entered ["+Util.getRealKingdomName(ownedKingdomName)+ChatColor.RED+"] territory.\n" + ChatColor.BOLD + " They have been alerted to your presence." + ChatColor.RESET + ChatColor.RED + "\n                              Beware.");
+						Util.gbc(ownedKingdomName, ChatColor.RED + p.getName() + " has entered our guilds territory! Possible raid incoming, " + ChatColor.BOLD + "defend the Kingdom!");
 					}
 				}
 				if (isPlayerInSameKingdomChunk.containsKey(p)){
@@ -54,8 +53,9 @@ public class PlayerMoveListener implements Listener{
 							Util.sm(p,"You have entered your Kingdom. You feel safe.");
 						}
 						if(!playersKingdom.matches(ownedKingdomName)){
-							Util.sm(p,"You have entered territory owned by the kingdom ["+Util.getRealKingdomName(ownedKingdomName)+ChatColor.GRAY+"]. Beware.");
-							Util.gbc(ownedKingdomName, ChatColor.DARK_RED + "!!!!!!!!!!!!! " + ChatColor.RED + p.getName() + " has entered our guilds territory! Possible raid incoming, defend" + ChatColor.DARK_RED + " !!!!!!!!!!!!! ");
+							Util.srm(p,ChatColor.DARK_GRAY + "         ------------! Warning !------------");
+							Util.srm(p,ChatColor.RED + "        You have entered ["+Util.getRealKingdomName(ownedKingdomName)+ChatColor.RED+"] territory.\n" + ChatColor.BOLD + " They have been alerted to your presence." + ChatColor.RESET + ChatColor.RED + "\n                              Beware.");
+							Util.gbc(ownedKingdomName, ChatColor.RED + p.getName() + " has entered our guilds territory! Possible raid incoming, " + ChatColor.BOLD + "defend the Kingdom!");
 						}
 					}
 				}

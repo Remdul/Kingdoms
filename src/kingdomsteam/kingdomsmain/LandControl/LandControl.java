@@ -26,7 +26,6 @@ public class LandControl {
     		Fail = "You do not have enough, you require: "+ChatColor.DARK_AQUA+claimCost;
     	}
     	String chunkClaimerKingdom = Main.players.getString("Players."+chunkClaimer.toLowerCase()+".Current_Kingdom");
-    	String claimerKingdomPrefix = Main.kingdoms.getString("Kingdoms."+chunkClaimerKingdom+".Chat_Prefix");
     	if (EconomyHelper.completeTransaction(p, claimCost, Fail)==false){
     		Util.er(s, "You can't afford to claim land. Claim cost: " + String.valueOf(claimCost));
     		return false;
@@ -37,7 +36,7 @@ public class LandControl {
 	    Main.landcontrol.set("Chunks."+chunkWorld+"_"+chunkX+"_"+chunkZ+".Owning_Kingdom", chunkClaimerKingdom);
 	    Main.landcontrol.set("Chunks."+chunkWorld+"_"+chunkX+"_"+chunkZ+".Plot_Type", "public");
 	    LandControlHelper.getMap(p);
-	    Util.sm(p,"You claimed this land for the kingdom <"+ChatColor.DARK_AQUA + claimerKingdomPrefix + ChatColor.GRAY + ">!");
+	    Util.sm(p,"You claimed this land for the kingdom ["+ Util.getRealKingdomName(chunkClaimerKingdom) + ChatColor.GRAY + "]!");
 	    Main.saveLandControlYaml();
 		return true;
 	}

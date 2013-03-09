@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 
 public class Util {
 	public static void DEBUG(String s){
-		Bukkit.broadcastMessage(ChatColor.GRAY + "[KINGDOMS DEBUG] " + ChatColor.DARK_GRAY + s);
+		Bukkit.broadcastMessage(ChatColor.GRAY + "[KINGDOMS DEBUG - IGNORE THIS] " + ChatColor.DARK_GRAY + s);
 	}
 	public static void sam(CommandSender s, String m) {
 		s.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_AQUA + "Kingdoms Admin" + ChatColor.DARK_GRAY + "] " + ChatColor.GRAY + m);
@@ -164,6 +164,8 @@ public class Util {
     	Main.politicsAndWarConfig.options().header("-- POLITICS AND WAR CONFIGURATION EXPLANATION --\nWar_Duration_(Hours) --> CURRENTLY NOT WORKING.\nBypass_PvP_Safe_Zones_If_At_War --> true/false - say whether or not kingdoms who are at war can damage each other *EVEN IN PVP SAFE ZONES* if they are at war.");
     	Main.politicsAndWarConfig.set("War.War_Duration_(Hours)", 48);
     	Main.politicsAndWarConfig.set("War.Bypass_PvP_Safe_Zones_If_At_War", true);
+    	Main.politicsAndWarConfig.set("War.Minimum_Members_Online_To_Be_Raidable", 3);
+    	Main.politicsAndWarConfig.set("War.Raidability_Grace_Period_(Minutes)", 30);
     	Main.savePoliticsAndWarConfigYaml();
     }
 	

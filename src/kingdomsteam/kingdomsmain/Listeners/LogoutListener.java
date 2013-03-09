@@ -23,6 +23,7 @@ public class LogoutListener implements Listener{
 		int currentKingdomTotalXP = Main.kingdoms.getInt("Kingdoms." + currentKingdom + ".Total_XP");
 		int updCurrentKingdomTotalXP = (int) (currentKingdomTotalXP + totalMinutesLoggedIn);
 		
+		
 		if(totalMinutesLoggedIn >= 1 && (!currentKingdom.matches("None") || currentKingdom == null)){
 			Main.players.set("Players." + playerName + ".Kingdom_Contributions", updatedContributions);
 			Main.kingdoms.set("Kingdoms." + currentKingdom + ".Total_XP", updCurrentKingdomTotalXP);
@@ -32,6 +33,8 @@ public class LogoutListener implements Listener{
 		}else if(totalMinutesLoggedIn < 1){
 			return false;
 		}
+/*		long lastKingdomInteractionPlus30Min = (System.currentTimeMillis() + (Main.politicsAndWarConfig.getInt("War.Raidability_Grace_Period_(Minutes)") * 60000));
+		Main.lastKingdomInteractions.put(currentKingdom.toLowerCase(), lastKingdomInteractionPlus30Min);*/
 		Main.saveKingdomsYaml();
 		Main.savePlayersYaml();
 		return true;

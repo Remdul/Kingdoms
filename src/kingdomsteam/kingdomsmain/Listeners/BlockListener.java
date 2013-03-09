@@ -1,5 +1,6 @@
 package kingdomsteam.kingdomsmain.Listeners;
 import kingdomsteam.kingdomsmain.Main;
+import kingdomsteam.kingdomsmain.PoliticsAndWar.PoliticsHelper;
 import kingdomsteam.kingdomsmain.Util.Util;
 
 import org.bukkit.ChatColor;
@@ -21,10 +22,13 @@ public class BlockListener implements Listener{
 		if (Main.landcontrol.getString("Chunks."+playerWorld+"_"+playerX+"_"+playerZ+".Owning_Kingdom") == null){
 			return true;
 		}
+		String owningKingdom = Main.landcontrol.getString("Chunks."+playerWorld+"_"+playerX+"_"+playerZ+".Owning_Kingdom");
+		if(PoliticsHelper.isKingdomInARaidableState(owningKingdom) == true){
+			return true;
+		}
 		if (!Main.landcontrol.getString("Chunks."+playerWorld+"_"+playerX+"_"+playerZ+".Owning_Kingdom").matches(chunkBuilder)){
-			String owningKingdom = Main.landcontrol.getString("Chunks."+playerWorld+"_"+playerX+"_"+playerZ+".Owning_Kingdom");
 			if (owningKingdom != null){
-				Util.er(p,"This land is claimed by [" + Util.getRealKingdomName(owningKingdom.toLowerCase()) + ChatColor.RED + "], you are not allowed to destroy here.");
+				Util.er(p,"This land is claimed by [" + Util.getRealKingdomName(owningKingdom.toLowerCase()) + ChatColor.RED + "], you are not allowed to destroy here until they have " + Main.politicsAndWarConfig.getString("War.Minimum_Members_Online_To_Be_Raidable") + " members online (and then become raidable).");
 				event.setCancelled(true);
 				return false;
 			}
@@ -42,10 +46,13 @@ public class BlockListener implements Listener{
 		if (Main.landcontrol.getString("Chunks."+playerWorld+"_"+playerX+"_"+playerZ+".Owning_Kingdom") == null){
 			return true;
 		}
+		String owningKingdom = Main.landcontrol.getString("Chunks."+playerWorld+"_"+playerX+"_"+playerZ+".Owning_Kingdom");
+		if(PoliticsHelper.isKingdomInARaidableState(owningKingdom) == true){
+			return true;
+		}
 		if (!Main.landcontrol.getString("Chunks."+playerWorld+"_"+playerX+"_"+playerZ+".Owning_Kingdom").matches(chunkBuilder)){
-			String owningKingdom = Main.landcontrol.getString("Chunks."+playerWorld+"_"+playerX+"_"+playerZ+".Owning_Kingdom");
 			if (Main.landcontrol.getString("Chunks."+playerWorld+"_"+playerX+"_"+playerZ+".Owning_Kingdom") != null){
-				Util.er(p,"This land is claimed by [" + Util.getRealKingdomName(owningKingdom.toLowerCase()) + ChatColor.RED + "], you are not allowed to build here.");
+				Util.er(p,"This land is claimed by [" + Util.getRealKingdomName(owningKingdom.toLowerCase()) + ChatColor.RED + "], you are not allowed to build here until they have " + Main.politicsAndWarConfig.getString("War.Minimum_Members_Online_To_Be_Raidable") + " members online (and then become raidable).");
 				event.setCancelled(true);
 				return false;
 			}

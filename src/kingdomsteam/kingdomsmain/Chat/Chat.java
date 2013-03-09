@@ -46,9 +46,9 @@ public class Chat {
 			for(Player p : ListOfPlayers){
 				String name = p.getName().toLowerCase();
 				if(Main.players.getString("Players." + name + ".Current_Kingdom").matches(talkersKingdom)){
-					p.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_AQUA + playersKingdomPrefix + " Kingdom" + ChatColor.DARK_GRAY + "] " + "[" + ChatColor.BLUE + playersCurrentRankString + ChatColor.DARK_GRAY + "] " + ChatColor.WHITE + s.getName() + ": " + sbAsString);
-					s.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_AQUA + playersKingdomPrefix + " Kingdom" + ChatColor.DARK_GRAY + "] " + "[" + ChatColor.BLUE + playersCurrentRankString + ChatColor.DARK_GRAY + "] " + ChatColor.WHITE + s.getName() + ": " + sbAsString);
-					Bukkit.getLogger().info(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_AQUA + playersKingdomPrefix + " Kingdom" + ChatColor.DARK_GRAY + "] " + "[" + ChatColor.BLUE + playersCurrentRankString + ChatColor.DARK_GRAY + "] " + ChatColor.WHITE + s.getName() + ": " + sbAsString);
+					p.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_AQUA + playersKingdomPrefix + ChatColor.DARK_GRAY + "] " + "[" + ChatColor.BLUE + playersCurrentRankString + ChatColor.DARK_GRAY + "] " + ChatColor.WHITE + s.getName() + ": " + sbAsString);
+					s.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_AQUA + playersKingdomPrefix + ChatColor.DARK_GRAY + "] " + "[" + ChatColor.BLUE + playersCurrentRankString + ChatColor.DARK_GRAY + "] " + ChatColor.WHITE + s.getName() + ": " + sbAsString);
+					Bukkit.getLogger().info(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_AQUA + playersKingdomPrefix + ChatColor.DARK_GRAY + "] " + "[" + ChatColor.BLUE + playersCurrentRankString + ChatColor.DARK_GRAY + "] " + ChatColor.WHITE + s.getName() + ": " + sbAsString);
 					return true;
 				}
 			}

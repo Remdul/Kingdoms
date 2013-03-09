@@ -52,6 +52,7 @@ public class Main extends JavaPlugin {
     
     public static Map<String, Long> loginTimeMillis;
     public static Map<String, Long> logoutTimeMillis;
+    public static Map<String, Long> lastKingdomInteractions;
     public static Permission permission = null;
     public static Economy economy = null;
     public static Chat chat = null;
