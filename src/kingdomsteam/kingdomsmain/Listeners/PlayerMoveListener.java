@@ -24,6 +24,10 @@ public class PlayerMoveListener implements Listener{
 	public void onPlayerMove (PlayerMoveEvent e){
 		
 		Player p = e.getPlayer();
+		
+		if(p.isOp())
+			return;
+		
 		String w = p.getLocation().getWorld().getName().toLowerCase();
 		int c = p.getLocation().getChunk().getX();
 		int r = p.getLocation().getChunk().getZ();

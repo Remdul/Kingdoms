@@ -57,7 +57,7 @@ public class ChatListener implements Listener{
 			}
 		}
 		
-		if(GeneralHelper.isInKingdom(s) == true){
+		if(GeneralHelper.isInKingdom(s)){
 			if(Main.chatConfig.getBoolean("Chat.Display_Kingdom_Tags_In_Chat") == true){
 				String playersCurrentKingdom = Main.players.getString("Players." + playersName + ".Current_Kingdom");
 				String playersKingdomPrefix = Main.kingdoms.getString("Kingdoms." + playersCurrentKingdom + ".Chat_Prefix");
@@ -74,7 +74,7 @@ public class ChatListener implements Listener{
 			return false;
 		}
 		
-		if(GeneralHelper.isInKingdom(s) == false){
+		if(!GeneralHelper.isInKingdom(s)){
 			if(Main.chatConfig.getBoolean("Chat.Display_Kingdom_Tags_In_Chat") == true){
 				if(Main.chatConfig.getBoolean("Chat.Display_Kingdomless_Peoples_Prefix") == true){
 					String newFormatKingdom = Main.chatConfig.getString("Chat.Chat_Prefix");
